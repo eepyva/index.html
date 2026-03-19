@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>I just want a free bag of chipsuhh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+
+    <div class="glass-card">
+
+        <!-- 🎂 CANDLES ON THE BOX -->
+        <div class="birthday-candles">
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+        </div>
+
+        <h1>Happy 18th Birthday Jody! 🎂</h1>
+
+        <p><b>TRY</b> to enjoy adulthood haha<br>
+        <em>#lifetooseriousmeowbrah</em></p>
+
+        <p>ok so when are u getting ur P's</p>
+
+        <button class="cute-btn" onclick="playMeow(); redirectUser();">
+            chop chop hurry up
+        </button>
+        
+    </div>
+
+    <!-- Paw print container -->
+    <div id="paw-container"></div>
+
+    <!-- Meow + Redirect Script -->
+    <script>
+        function playMeow() {
+            const audio = new Audio("meow.mp3");
+            audio.volume = 1;
+            audio.play();
+        }
+
+        function redirectUser() {
+            setTimeout(() => {
+                window.location.href = "https://www.service.nsw.gov.au/transaction/book-a-driver-or-rider-licence-test";
+            }, 600);
+        }
+    </script>
+
+    <!-- Paw Print Animation Script -->
+    <script>
+        setInterval(() => {
+            const paw = document.createElement("div");
+            paw.classList.add("paw");
+
+            // random horizontal position
+            paw.style.left = Math.random() * window.innerWidth + "px";
+
+            // random size
+            const size = 20 + Math.random() * 20;
+            paw.style.fontSize = size + "px";
+
+            document.getElementById("paw-container").appendChild(paw);
+
+            setTimeout(() => paw.remove(), 5000);
+        }, 300);
+    </script>
+
+<br>
+
+<div class="orb-divider"></div>
+
+<div id="gallery-section">
+
+    <h2 class="gallery-title">✨ Kickstart to Jody's Modelling Career ✨</h2>
+
+    <div class="gallery-grid">
+        <img src="jody1.png" alt="hi">
+        <img src="jody2.png" alt="meow">
+        <img src="jody3.png" alt="purr">
+        <img src="jody4.png" alt="slayy">
+        <img src="jody5.png" alt="wow">
+        <img src="jody6.png" alt="sugoi">
+    </div>
+
+</div>
+<br>
+<div id="big-candle-section">
+    <h2 class="make-a-wish">Make a wish…</h2>
+    <br>
+    <br>
+
+    <div class="big-candle">
+        <div class="big-flame" id="bigFlame"></div>
+        <div class="smoke" id="smoke"></div>
+    </div>
+
+    <p class="blow-text">Click to put out the candle</p>
+</div>
+
+<script>
+let flame = document.getElementById("bigFlame");
+let smoke = document.getElementById("smoke");
+let blownOut = false;
+
+// Blow out on click
+document.querySelector(".big-candle").onclick = () => {
+    if (!blownOut) {
+        blowOutCandle();
+    } else {
+        relightCandle();
+    }
+};
+
+function blowOutCandle() {
+    blownOut = true;
+
+    // Hide flame
+    flame.style.display = "none";
+
+    // Smoke animation
+    smoke.style.opacity = "1";
+    smoke.style.animation = "smokeRise 1.2s forwards";
+}
+
+function relightCandle() {
+    blownOut = false;
+
+    smoke.style.opacity = "0";
+    smoke.style.animation = "none";
+
+    flame.style.display = "block";
+}
+</script>
+</script>
+
+</body>
+</html>

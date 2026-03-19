@@ -1,0 +1,255 @@
+/* GLOBAL FONT */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("catsbg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    animation: fadeIn 1.2s ease-in-out;
+    font-family: 'Fredoka', sans-serif;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 🎂 CANDLES ON TOP OF THE BOX */
+.birthday-candles {
+    position: absolute;
+    top: -60px; /* sits ON the box */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    z-index: 50;
+    filter: drop-shadow(0 0 12px hotpink);
+}
+
+/* 🎂 CANDLE BODY */
+.candle {
+    width: 30px;
+    height: 80px;
+    background: #ffb3d9;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 0 0 12px hotpink;
+}
+
+/* 🎂 FLAME */
+.flame {
+    width: 22px;
+    height: 30px;
+    background: radial-gradient(circle, #ffea00, #ff9900);
+    border-radius: 50%;
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: flicker 0.15s infinite alternate;
+    filter: drop-shadow(0 0 10px gold);
+}
+
+/* 🎂 FLICKER ANIMATION */
+@keyframes flicker {
+    from { transform: translateX(-50%) scale(1); }
+    to { transform: translateX(-50%) scale(1.2); }
+}
+
+/* 🎂 MAKE THE BOX POSITIONABLE */
+.glass-card {
+    position: relative;
+    padding-top: 100px; /* space so candles don't overlap text */
+
+    width: 60%;
+    max-width: 600px;
+    margin: 120px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.5);
+
+    /* ✨ PINK GLOW ✨ */
+    box-shadow: 0 0 35px rgba(255, 105, 180, 0.9);
+}
+
+/* Headings */
+h1, h2, .gallery-title {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Cute button */
+.cute-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #ffffffcc;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cute-btn:hover {
+    background: #fff7cc;
+    transform: scale(1.05);
+}
+
+/* Paw container */
+#paw-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.paw {
+    position: fixed;
+    top: -40px;
+    width: 40px;
+    height: 40px;
+    background-image: url("paw.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    animation: fall 5s linear forwards;
+}
+
+/* Paw fall animation */
+@keyframes fall {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+
+/* Divider */
+.orb-divider {
+    width: 100%;
+    height: 150px;
+    margin: 40px auto;
+    background-image: url("divider.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px;
+}
+
+/* GALLERY SECTION */
+#gallery-section {
+    margin-top: 80px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Gallery title */
+.gallery-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Gallery grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Gallery images */
+.gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Pink glow hover */
+.gallery-grid img:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 35px rgba(255, 105, 180, 1);
+}
+
+/* 🕯️ BIG CANDLE SECTION */
+#big-candle-section {
+    margin-top: 120px;
+    text-align: center;
+}
+
+.make-a-wish {
+    font-size: 28px;
+    margin-bottom: 25px; /* pushes candle DOWN */
+    margin-top: 0;
+    color: hotpink;
+    text-shadow: 0 0 10px pink;
+}
+
+/* 🕯️ BIG CANDLE BODY */
+.big-candle {
+    width: 80px;
+    height: 180px;
+    background: #ffffff;
+    border-radius: 12px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 0 25px rgb(255, 255, 255);
+}
+
+/* 🕯️ BIG FLAME */
+.big-flame {
+    width: 40px;
+    height: 55px;
+    background: radial-gradient(circle, #ffea00, #ff9900);
+    border-radius: 50%;
+    position: absolute;
+    top: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bigFlicker 0.18s infinite alternate;
+    filter: drop-shadow(0 0 18px gold);
+}
+
+/* 🌀 SMOKE */
+.smoke {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(200, 200, 200, 0.6);
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Smoke animation */
+@keyframes smokeRise {
+    0% { opacity: 0.8; transform: translate(-50%, 0) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -60px) scale(1.8); }
+}
+
+/* Flame flicker */
+@keyframes bigFlicker {
+    from { transform: translateX(-50%) scale(1); }
+    to { transform: translateX(-50%) scale(1.25); }
+}
+
+.blow-text {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #000000;
+}
